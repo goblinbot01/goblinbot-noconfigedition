@@ -186,20 +186,10 @@ client.on("message", function(message) {
     messagesSent: 0
   }
   userData[message.member.id].messagesSent++;
-  fs.writeFile("userData/userData.json", JSON.stringify(userData), (err) => {
-    if (err) {
-      console.log("\x1b[31m%s\x1b[0m", "GoblinBot ERR!: Failed to write Level data. Log is shown below.")
-      console.error(err)
-    }
-  })
   if (userData[message.member.id].tokens) {
     if (message.content.length > 10) {
       userData[message.member.id].tokens+=10
-      fs.writeFile("userData/userData.json", JSON.stringify(userData), (err) => {
-        if (err) {
-          console.error(err);
-        }
-    })}
+    }
   }
   if (!serverData[message.guild.id]) serverData[message.guild.id] = {
     serverPrefix: "//"
