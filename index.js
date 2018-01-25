@@ -82,8 +82,8 @@ var Confirm_Slot_Complete = false;
 const moment = require("moment");
 const talkedRecently = new Set();
 console.log('\x1b[36m%s\x1b[0m', 'GoblinBot MESSAGE: Initalizing')
-var userData = {}; // Known no longer like config file. Those that helped me test the Beta, will get extra Coins.
-var serverData = {}; // same as up :)
+var userData = {"372737442840707072":{"tokens":50000,"messagesSent":778,"lastDaily":"01/14/2018"},"338171056038608908":{"messagesSent":42,"tokens":50000},"184405311681986560":{"messagesSent":4},"384176924995485696":{"messagesSent":45},"345318328195350528":{"messagesSent":23,"tokens":50000,"lastDaily":"01/10/2018"},"384640839185334293":{"messagesSent":60},"172002275412279296":{"messagesSent":9},"345005051103805440":{"messagesSent":16},"339304354882387970":{"messagesSent":6},"391614707838222339":{"messagesSent":319,"tokens":50000},"304789135124594698":{"messagesSent":1}}; // Known no longer like config file. Those that helped me test the Beta, will get extra Coins.
+var serverData = {"397772728049860609":{"serverPrefix":"//"},"395286352070967301":{"serverPrefix":"//"},"396200284574973953":{"serverPrefix":"//"},"402478717290676224":{"serverPrefix":"//"}}; // same as up :)
 var helpMsg = "``` Goblin Bot Help \n \n help all; \n help mod; \n help music; \n help commands... ```"
 // Functions and variables
 function doMagicMeme() {
