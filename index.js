@@ -150,6 +150,7 @@ setInterval(()=>{
 client.on('ready', () => {
   console.log('\x1b[36m%s\x1b[0m', "GoblinBot MESSAGE: I am ready!")
   client.user.setGame("Say //help v0.10", "https://www.twitch.tv/goblinbot_fakestatus_lol")
+  client.user.setUsername("Goblin");
 });
 // User Commands
 client.on("message", function(message) {
