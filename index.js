@@ -211,20 +211,6 @@ client.on("message", function(message) {
   }
   var args = message.content.substring(serverData[message.guild.id].serverPrefix.length).split(" "); // Specify what args are.
   switch (args[0]) { // Command loop
-    case "purge":
-      async function purge(limit) {
-        if (isNaN(limit)) {
-          message.channel.send("Your limit must be a number");
-          return;
-        }
-        const fetched = await message.channel.fetchMessages({limit: limit})
-        console.log(fetched + " messages found")
-        message.channel.bulkDelete(fetched)
-          .catch(error => {
-            message.reply("suspicious error occured while deleting: ```" + error + "```");
-          })
-      }
-      break;
     case "play":
       if (message.member.voiceChannel || guilds[message.guild.id].voiceChannel != null) {
         if (guilds[message.guild.id].queue.length > 0 || guilds[message.guild.id].isPlaying) {
@@ -615,6 +601,21 @@ client.on("message", function(message) {
   }
   var args = message.content.substring(SERVER_VALUES[1].length).split(" ");
   switch (args[0]) {
+    case "purge":
+      async function purge(limit) {
+        if (isNaN(limit)) {
+          message.channel.send("Your limit must be a number");
+          return;
+        }
+        const fetched = await message.channel.fetchMessages({limit: limit})
+        console.log(fetched + " messages found")
+        message.channel.bulkDelete(fetched)
+          .catch(error => {
+            message.reply("suspicious error occured while deleting: ```" + error + "```");
+          })
+      }
+      purge(args[1]);
+      break;    
     case "prefix_user":
       if (args[1]===undefined) {
         message.channel.send("Please specify an action to do with prefix. Setting prefix to none will be not supported.")
